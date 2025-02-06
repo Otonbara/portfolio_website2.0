@@ -4,4 +4,25 @@
 body {
     font-family: 'Oswald', sans-serif;
     background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* ABOUT */
+.about {
+    background-color: #ececec;
+    padding: 20px 20px;
+}
+
+.about-content h2{
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 20px;
+    text-align: justify;
+    line-height: 2em;
 }
