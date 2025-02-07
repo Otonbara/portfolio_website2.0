@@ -1,7 +1,5 @@
 import './Hero.css';
-import { FaArrowDown } from 'react-icons/fa';
-import { FaBars } from 'react-icons/fa';
-import { FaTimes } from 'react-icons/fa';
+import { FaArrowDown, FaBars, FaTimes } from 'react-icons/fa';
 import { useState } from 'react';
 import HeroImg from '../assets/MAIN_SHITnobgBW.png';
 import HTMLImg from '../assets/html5-01-svgrepo-com.svg';
@@ -46,7 +44,7 @@ const Hero = () => {
                     <li><a href='#' onClick={toggleNav}>HOME</a></li>
                     <li><a href='#about' onClick={toggleNav}>ABOUT</a></li>
                     <li><a href='#projects' onClick={toggleNav}>PROJECTS</a></li>
-                    <li><a href='#' onClick={toggleNav}>CONTACT ME</a></li>
+                    <li><a href='#contact' onClick={toggleNav}>CONTACT ME</a></li>
                     <li className="close-btn" onClick={toggleNav}><FaTimes/></li>
                     <li className='email-btn-container'>
                         <a href="mailto:alfredokolai@gmail.com">

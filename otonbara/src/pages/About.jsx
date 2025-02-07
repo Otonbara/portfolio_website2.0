@@ -1,18 +1,11 @@
 import '../style.css'
 import CV from '../assets/CV2.pdf'
-import { FaDownload } from 'react-icons/fa'
+import { FaDownload, FaLaptop, FaFigma, FaCode, FaReact, FaFirefoxBrowser, FaChartLine, FaMobile, FaDoorOpen } from 'react-icons/fa'
 import GitHubIMG from '../assets/github-142-svgrepo-com.svg'
 import LinkedInIMG from '../assets/linkedin-161-svgrepo-com.svg'
+import SpotifyIMG from '../assets/spotify-162-svgrepo-com.svg'
 import XIMG from '../assets/X_logo_2023.svg'
 import AWSCertIMG from '../assets/aws-cloud-practitioner.svg'
-import { FaLaptop } from 'react-icons/fa'
-import { FaFigma } from 'react-icons/fa'
-import { FaCode } from 'react-icons/fa'
-import { FaReact } from 'react-icons/fa'
-import { FaFirefoxBrowser } from 'react-icons/fa'
-import { FaChartLine } from 'react-icons/fa'
-import { FaMobile } from 'react-icons/fa'
-import { FaDoorOpen } from 'react-icons/fa'
 import HTMLImg from '../assets/html5-01-svgrepo-com.svg';
 import CSSImg from '../assets/css3-01-svgrepo-com.svg';
 import JSImg from '../assets/javascript-155-svgrepo-com.svg';
@@ -50,7 +43,24 @@ const About = () => {
                         <li className='social-link'><a href="https://github.com/Otonbara" target='blank'><img src={GitHubIMG} alt="GitHub"/></a></li>
                         <li className='social-link'><a href="https://twitter.com/otonbarao" target='blank'><img src={XIMG} alt="X"/></a></li>
                         <li className='social-link'><a href="https://www.credly.com/badges/8799d5ec-e18e-46b1-884f-bed76dbaa227/public_url" target='blank'><img src={AWSCertIMG} alt="AWS Certificate"/></a></li>
+                        <li className='social-link'><a href="https://open.spotify.com/user/31fxwcmwc2bgjzodpt2shpljpnkq?si=12e46c1427544f02" target='blank'><img src={SpotifyIMG} alt="Spotify"/></a></li>
                     </ul>
+                </div>
+            </section>
+
+            {/* EXPERIENCE */}
+            <section id='experience' className='experience'>
+                <h2>WORK EXPERIENCE</h2>
+                <div className="experience-cards">
+                    <div className="experience-card">
+                        <h3>FRONT-END DEVELOPER (VOLUNTEERING) - GREENSTAND</h3>
+                        <p>Oct 2024 - Dec 2024</p>
+                        <p>
+                            Participated in meetings and gave the little insight I had,
+                            also helped with the development of their treetracker website,
+                            by refactoring some codes.
+                        </p>
+                    </div>
                 </div>
             </section>
             
