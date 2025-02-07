@@ -1,5 +1,6 @@
 import Hero from "./components/Hero"
 import About from './pages/About';
+import Projects from "./pages/Projects";
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <Hero />
       <About />
+      <Projects />
     </>
   );
 }

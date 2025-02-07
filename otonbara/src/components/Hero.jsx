@@ -1,4 +1,8 @@
 import './Hero.css';
+import { FaArrowDown } from 'react-icons/fa';
+import { FaBars } from 'react-icons/fa';
+import { FaTimes } from 'react-icons/fa';
+import { useState } from 'react';
 import HeroImg from '../assets/MAIN_SHITnobgBW.png';
 import HTMLImg from '../assets/html5-01-svgrepo-com.svg';
 import CSSImg from '../assets/css3-01-svgrepo-com.svg';
@@ -21,21 +25,35 @@ import AutoDeskImg from '../assets/autodesk-svgrepo-com.svg';
 import Marquee from 'react-fast-marquee';
 
 const Hero = () => {
+    const [isNavOpen, setIsNavOpen] = useState(false);
+
     const handleScroll = () => {
         document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
     };
+
+    const toggleNav = () => {
+        setIsNavOpen(!isNavOpen);
+    }
 
     return (
         <section className='hero'>
             <nav className='navbar'>
                 <div className='logo'>OTONBARA.</div>
-                <ul className='nav-links'>
-                    <li><a href='#'>Home</a></li>
-                    <li><a href='#'>About</a></li>
-                    <li><a href='#'>Projects</a></li>
-                    <li><a href='#'>Contact</a></li>
+                <div className="hamburger" onClick={toggleNav}>
+                    <FaBars/>
+                </div>
+                <ul className={`nav-links ${isNavOpen ? 'open' : ''}`}>
+                    <li><a href='#' onClick={toggleNav}>HOME</a></li>
+                    <li><a href='#about' onClick={toggleNav}>ABOUT</a></li>
+                    <li><a href='#projects' onClick={toggleNav}>PROJECTS</a></li>
+                    <li><a href='#' onClick={toggleNav}>CONTACT ME</a></li>
+                    <li className="close-btn" onClick={toggleNav}><FaTimes/></li>
+                    <li className='email-btn-container'>
+                        <a href="mailto:alfredokolai@gmail.com">
+                            <button className='email-btn'>EMAIL ME</button>
+                        </a>
+                    </li>
                 </ul>
-                <button className='email-btn'>Email Me</button>
             </nav>
 
             <div className='hero-content'>
@@ -46,7 +64,7 @@ const Hero = () => {
                     <p>based in Lagos, Nigeria.</p>
                 </div>
 
-                <Marquee className='marquee-wrapper' id='marquee-wrapper' gradient={false} speed={50} pauseOnHover={true}>
+                <Marquee className='marquee-wrapper marquee-content' id='marquee-wrapper' gradient={false} speed={50} pauseOnHover={true}>
                     <img src={HTMLImg} alt="HTML" className='marquee-img' />
                     <img src={CSSImg} alt="CSS" className='marquee-img' />
                     <img src={JSImg} alt="JS" className='marquee-img' />
@@ -74,18 +92,7 @@ const Hero = () => {
 
                 <div className='button'>
                     <button className='btn filled' onClick={handleScroll}>
-                        Learn More
-                        <svg 
-                            xmlns="http://www.w3.org/2000/svg" 
-                            width="16" 
-                            height="16" 
-                            fill="currentColor" 
-                            className="bi bi-arrow-down" 
-                            viewBox="0 0 16 16">
-                                <path 
-                                    fillRule="evenodd" 
-                                    d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 1 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
-                        </svg>
+                        LEARN MORE <FaArrowDown/>
                     </button>
                 </div>
             </div>
