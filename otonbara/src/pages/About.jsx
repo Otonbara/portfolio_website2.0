@@ -140,7 +140,7 @@ const About = () => {
                             animate={servicesControls}
                             variants={{
                                 hidden: { opacity: 0, y: 50 },
-                                visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: index * 0.55 } }
+                                visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: index * 0.2 } }
                             }}
                         >
                             <h3>{service.title} {service.icon}</h3>
@@ -184,7 +184,7 @@ const About = () => {
                             animate={techStackControls}
                             variants={{
                                 hidden: { opacity: 0, y: 50 },
-                                visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: index * 0.55 } }
+                                visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: index * 0.2 } }
                             }}
                         >
                             <h3>{tech.title}</h3>
