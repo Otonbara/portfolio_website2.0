@@ -21,9 +21,17 @@ import VSCodeImg from '../assets/vscode-fill-svgrepo-com.svg';
 import SketchUpImg from '../assets/sketchup-svgrepo-com.svg';
 import AutoDeskImg from '../assets/autodesk-svgrepo-com.svg';
 import Marquee from 'react-fast-marquee';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const Hero = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
+    const controls = useAnimation();
+    const {ref, inView} = useInView({ triggerOnce: true});
+
+    if (inView) {
+        controls.start("visible");
+    }
 
     const handleScroll = () => {
         document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
@@ -54,10 +62,20 @@ const Hero = () => {
                 </ul>
             </nav>
 
-            <div className='hero-content'>
+            <motion.div 
+                className='hero-content'
+                ref={ref}
+                initial="hidden"
+                animate={controls}
+                variants={{
+                    hidden: { opacity: 0, y: 50},
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.5 }}
+                }}
+            >
                 <div className='text-overlay'>
                     <h1 className='title'>
-                        <span className='outline'>WEB DEVELOPER</span>
+                        <span className='outline'>OKOLAI OTONBARA ALFRED</span> <br />
+                        <span>WEB DEVELOPER</span>
                     </h1>
                     <p>based in Lagos, Nigeria.</p>
                 </div>
@@ -83,17 +101,25 @@ const Hero = () => {
                     <img src={AutoDeskImg} alt="AutoDesk" className='marquee-img' />
                 </Marquee>  
 
-                <div className='image-container'>
+                <motion.div 
+                    className='image-container'
+                    initial="hidden"
+                    animate={controls}
+                    variants={{
+                        hidden: { opacity: 0, y: 50 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: 0.3 }}
+                    }}
+                >
                     <div className='gradient'></div>
                     <img src={HeroImg} alt="Otonbara" className='hero-img'/>
-                </div>
+                </motion.div>
 
                 <div className='button'>
                     <button className='btn filled' onClick={handleScroll}>
                         LEARN MORE <FaArrowDown/>
                     </button>
                 </div>
-            </div>
+            </motion.div>
         </section>
     );
 };

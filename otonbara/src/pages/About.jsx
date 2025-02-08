@@ -1,6 +1,6 @@
 import '../style.css'
 import CV from '../assets/CV2.pdf'
-import { FaDownload, FaLaptop, FaFigma, FaCode, FaReact, FaFirefoxBrowser, FaChartLine, FaMobile, FaDoorOpen } from 'react-icons/fa'
+import { FaDownload, FaLaptop, FaFigma, FaCode, FaReact, FaFirefoxBrowser, FaChartLine, FaMobile } from 'react-icons/fa'
 import GitHubIMG from '../assets/github-142-svgrepo-com.svg'
 import LinkedInIMG from '../assets/linkedin-161-svgrepo-com.svg'
 import SpotifyIMG from '../assets/spotify-162-svgrepo-com.svg'
@@ -18,11 +18,49 @@ import FirebaseImg from '../assets/firebase-svgrepo-com.svg';
 import GitImg from '../assets/git-svgrepo-com.svg';
 import GitHubImg from '../assets/github-142-svgrepo-com.svg';
 import AWSImg from '../assets/aws-svgrepo-com.svg';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const About = () => {
+    const aboutControls = useAnimation();
+    const experienceControls = useAnimation();
+    const servicesControls = useAnimation();
+    const techStackControls = useAnimation();
+
+    const { ref: aboutRef, inView: aboutInView } = useInView({ triggerOnce: true });
+    const { ref: experienceRef, inView: experienceInView } = useInView({ triggerOnce: true });
+    const { ref: servicesRef, inView: servicesInView } = useInView({ triggerOnce: true });
+    const { ref: techStackRef, inView: techStackInView } = useInView({ triggerOnce: true });
+
+    if (aboutInView) {
+        aboutControls.start("visible");
+    }
+
+    if (experienceInView) {
+        experienceControls.start("visible");
+    }
+
+    if (servicesInView) {
+        servicesControls.start("visible");
+    }
+
+    if (techStackInView) {
+        techStackControls.start("visible");
+    }
+
     return (
         <>
-            <section id='about' className='about'>
+            <motion.section 
+                id='about' 
+                className='about'
+                ref={aboutRef}
+                initial="hidden"
+                animate={aboutControls}
+                variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                }}
+            >
                 <div className='about-content'>
                     <h2>GET TO KNOW ME</h2>
                     <p>
@@ -46,10 +84,19 @@ const About = () => {
                         <li className='social-link'><a href="https://open.spotify.com/user/31fxwcmwc2bgjzodpt2shpljpnkq?si=12e46c1427544f02" target='blank'><img src={SpotifyIMG} alt="Spotify"/></a></li>
                     </ul>
                 </div>
-            </section>
+            </motion.section>
 
-            {/* EXPERIENCE */}
-            <section id='experience' className='experience'>
+            <motion.section 
+                id='experience' 
+                className='experience'
+                ref={experienceRef}
+                initial="hidden"
+                animate={experienceControls}
+                variants={{
+                    hidden: { opacity: 0, x: 50 },
+                    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } }
+                }}
+            >
                 <h2>WORK EXPERIENCE</h2>
                 <div className="experience-cards">
                     <div className="experience-card">
@@ -62,125 +109,92 @@ const About = () => {
                         </p>
                     </div>
                 </div>
-            </section>
+            </motion.section>
             
-            {/* SERVICES */}
-            <section id='services' className='services'>
-                <h2>SNEAK PEEK OF WHAT I OFFER</h2>
+            <motion.section 
+                id='services' 
+                className='services'
+                ref={servicesRef}
+                initial="hidden"
+                animate={servicesControls}
+                variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                }}
+            >
+                <h2>WHAT I OFFER:</h2>
                 <div className="service-cards">
-                    <div className="service-card">
-                        <h3>RESPONSIVE WEB DESIGN <FaLaptop/></h3>
-                        <p>Creating websites that work on all devices and screen sizes.</p>
-                    </div>
-                    <div className="service-card">
-                        <h3>USER INTERFACE (UI) DESIGN <FaFigma/></h3>
-                        <p>Creating websites that are visually appealing and easy to use.</p>
-                    </div>
-                    <div className="service-card">
-                        <h3>FRONT-END FRAMEWORK <FaReact/></h3>
-                        <p>Utilizing frameworks like React and Next.</p>
-                    </div>
-                    <div className="service-card">
-                        <h3>CROSS-BROWSER COMPATIBILITY <FaFirefoxBrowser/></h3>
-                        <p>Ensuring websites work on all browsers.</p>
-                    </div>
-                    <div className="service-card">
-                        <h3>PERFORMANCE OPTIMIZATION <FaChartLine/></h3>
-                        <p>Optimizing websites for speed and performance.</p>
-                    </div>
-                    <div className="service-card">
-                        <h3>INTERACTIVE ELEMENTS <FaMobile/></h3>
-                        <p>Creating interactive elements like forms and animations using JavaScript.</p>
-                    </div>
-                    <div className="service-card">
-                        <h3>ACCESSIBILITY <FaDoorOpen/></h3>
-                        <p>Ensuring websites are accessible to all users.</p>
-                    </div>
-                    <div className="service-card">
-                        <h3>CODE REFACTORING AND MAINTENANCE <FaCode/></h3>
-                        <p>Refactoring and maintaining code to keep it clean and efficient.</p>
-                    </div>
+                    {[
+                        { title: 'RESPONSIVE WEB DESIGN', icon: <FaLaptop/>, description: 'Creating websites that work on all devices and screen sizes.' },
+                        { title: 'USER INTERFACE (UI) DESIGN', icon: <FaFigma/>, description: 'Creating websites that are visually appealing and easy to use.' },
+                        { title: 'FRONT-END FRAMEWORK', icon: <FaReact/>, description: 'Utilizing frameworks like React and Next.' },
+                        { title: 'CROSS-BROWSER COMPATIBILITY', icon: <FaFirefoxBrowser/>, description: 'Ensuring websites work on all browsers.' },
+                        { title: 'PERFORMANCE OPTIMIZATION', icon: <FaChartLine/>, description: 'Optimizing websites for speed and performance.' },
+                        { title: 'INTERACTIVE ELEMENTS', icon: <FaMobile/>, description: 'Creating interactive elements like forms and animations using JavaScript.' },
+                        { title: 'CODE REFACTORING AND MAINTENANCE', icon: <FaCode/>, description: 'Refactoring and maintaining code to keep it clean and efficient.' }
+                    ].map((service, index) => (
+                        <motion.div 
+                            className="service-card"
+                            key={index}
+                            initial="hidden"
+                            animate={servicesControls}
+                            variants={{
+                                hidden: { opacity: 0, y: 50 },
+                                visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: index * 0.55 } }
+                            }}
+                        >
+                            <h3>{service.title} {service.icon}</h3>
+                            <p>{service.description}</p>
+                        </motion.div>
+                    ))}
                 </div>
-            </section>
+            </motion.section>
 
-            {/* TECH STACK */}
-            <section id='tech-stack' className='tech-stack'>
+            <motion.section 
+                id='tech-stack' 
+                className='tech-stack'
+                ref={techStackRef}
+                initial="hidden"
+                animate={techStackControls}
+                variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                }}
+            >
                 <h2>TECH STACK</h2>
                 <div className="tech-stack-cards">
-                    <div className="tech-stack-card">
-                        <h3>HTML</h3>
-                        <div className="tech-stack-card-image">
-                            <img src={HTMLImg} alt="HTML" />
-                        </div>
-                    </div>
-                    <div className="tech-stack-card">
-                        <h3>CSS</h3>
-                        <div className="tech-stack-card-image">
-                            <img src={CSSImg} alt="CSS" />
-                        </div>
-                    </div>
-                    <div className="tech-stack-card">
-                        <h3>JAVASCRIPT</h3>
-                        <div className="tech-stack-card-image">
-                            <img src={JSImg} alt="JS" />
-                        </div>
-                    </div>
-                    <div className="tech-stack-card">
-                        <h3>REACT</h3>
-                        <div className="tech-stack-card-image">
-                            <img src={ReactImg} alt="React" />
-                        </div>
-                    </div>
-                    <div className="tech-stack-card">
-                        <h3>PYTHON</h3>
-                        <div className="tech-stack-card-image">
-                            <img src={PythonImg} alt="Python" />
-                        </div>
-                    </div>
-                    <div className="tech-stack-card">
-                        <h3>DJANGO</h3>
-                        <div className="tech-stack-card-image">
-                            <img src={DjangoImg} alt="Django" />
-                        </div>
-                    </div>
-                    <div className="tech-stack-card">
-                        <h3>TAILWIND CSS</h3>
-                        <div className="tech-stack-card-image">
-                            <img src={TailwindImg} alt="Tailwind" />
-                        </div>
-                    </div>
-                    <div className="tech-stack-card">
-                        <h3>BOOTSTRAP CSS</h3>
-                        <div className="tech-stack-card-image">
-                            <img src={BootstrapImg} alt="Bootstrap" />
-                        </div>
-                    </div>
-                    <div className="tech-stack-card">
-                        <h3>GIT</h3>
-                        <div className="tech-stack-card-image">
-                            <img src={GitImg} alt="Git" />
-                        </div>
-                    </div>
-                    <div className="tech-stack-card">
-                        <h3>GITHUB</h3>
-                        <div className="tech-stack-card-image">
-                            <img src={GitHubImg} alt="GitHub" />
-                        </div>
-                    </div>
-                    <div className="tech-stack-card">
-                        <h3>AWS</h3>
-                        <div className="tech-stack-card-image">
-                            <img src={AWSImg} alt="AWS" />
-                        </div>
-                    </div>
-                    <div className="tech-stack-card">
-                        <h3>FIREBASE</h3>
-                        <div className="tech-stack-card-image">
-                            <img src={FirebaseImg} alt="Firebase" />
-                        </div>
-                    </div>
+                    {[
+                        { title: 'HTML', img: HTMLImg },
+                        { title: 'CSS', img: CSSImg },
+                        { title: 'JAVASCRIPT', img: JSImg },
+                        { title: 'REACT', img: ReactImg },
+                        { title: 'PYTHON', img: PythonImg },
+                        { title: 'DJANGO', img: DjangoImg },
+                        { title: 'TAILWIND CSS', img: TailwindImg },
+                        { title: 'BOOTSTRAP CSS', img: BootstrapImg },
+                        { title: 'GIT', img: GitImg },
+                        { title: 'GITHUB', img: GitHubImg },
+                        { title: 'AWS', img: AWSImg },
+                        { title: 'FIREBASE', img: FirebaseImg }
+                    ].map((tech, index) => (
+                        <motion.div 
+                            className="tech-stack-card"
+                            key={index}
+                            initial="hidden"
+                            animate={techStackControls}
+                            variants={{
+                                hidden: { opacity: 0, y: 50 },
+                                visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: index * 0.55 } }
+                            }}
+                        >
+                            <h3>{tech.title}</h3>
+                            <div className="tech-stack-card-image">
+                                <img src={tech.img} alt={tech.title} />
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
-            </section>
+            </motion.section>
         </>
     );
 };

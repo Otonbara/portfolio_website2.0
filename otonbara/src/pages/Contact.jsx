@@ -1,5 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
 import '../style.css'
-import { FaArrowDown, FaEnvelope, FaPhone } from 'react-icons/fa'
+import { FaEnvelope, FaPhone } from 'react-icons/fa'
 
 
 const Contact = () => {
@@ -7,13 +8,9 @@ const Contact = () => {
         <>
             <section className='contact' id='contact'>
                 <div className="text-overlay">
-                    <h2>I AM IMPRESSED REALLY 👏🏾</h2>
+                    <h2>LET'S MEET</h2>
                     <p>
-                        You actually made it this far, that is very impressive.
-                        Hope you enjoyed your stay on my page (I know you loved it, you do not need to say it).
-                        So this is where we say goodbye but before that, I want to say thank you for taking your precious time to read my page.
-                        I hope you have great day ahead and I hope you have a great life ahead.
-                        You can reach me by clicking these links below <FaArrowDown />
+                        Kindly click on the icons below and let's get to work!
                     </p>
                 </div>
                 <div className="contact-links">

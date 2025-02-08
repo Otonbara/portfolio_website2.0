@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import '../style.css'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
@@ -97,18 +96,6 @@ const Projects = () => {
         }
     ];
 
-    const CustomLeftArrow = ({ onClick }) => (
-        <button className="custom-arrow left-arrow" onClick={onClick}>
-            👈🏾
-        </button>
-    );
-
-    const CustomRightArrow = ({ onClick }) => (
-        <button className="custom-arrow right-arrow" onClick={onClick}>
-            👉🏾
-        </button>
-    );
-
     return (
         <>
             <section className='projects' id='projects'>
@@ -119,8 +106,8 @@ const Projects = () => {
                     autoPlaySpeed={2000}
                     infinite={true}
                     pauseOnHover={true}
-                    customLeftArrow={<CustomLeftArrow />}
-                    customRightArrow={<CustomRightArrow />}>
+                    showDots={true}
+                    arrows={false}>
 
                     {projects.map((project, index) => (
                         <div className='project-card' key={index}>
