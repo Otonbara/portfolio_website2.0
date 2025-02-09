@@ -301,14 +301,28 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
+    background-color: transparent;
+    border: 1px solid outset #303030;
+    color: #303030;
     font-size: 15px;
     cursor: pointer;
     z-index: 1;
     padding: 10px;
     border-radius: 50%;
+    overflow: hidden;
+}
+
+.custom-left-arrow::before,
+.custom-right-arrow::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: -1;
+    transition: filter 0.3s ease;
 }
 
 .custom-left-arrow {
@@ -319,9 +333,9 @@ body {
     right: 0;
 }
 
-.custom-left-arrow:hover,
-.custom-right-arrow:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+.custom-left-arrow:hover::before,
+.custom-right-arrow:hover::before {
+    filter: blur(100px);
 }
 
 .contact {
