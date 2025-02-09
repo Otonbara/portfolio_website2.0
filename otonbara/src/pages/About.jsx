@@ -1,10 +1,7 @@
 import '../style.css'
-import CV from '../assets/CV2.pdf'
-import { FaDownload, FaLaptop, FaFigma, FaCode, FaReact, FaFirefoxBrowser, FaChartLine, FaMobile } from 'react-icons/fa'
+import { FaLaptop, FaFigma, FaCode, FaReact, FaFirefoxBrowser, FaChartLine, FaMobile } from 'react-icons/fa'
 import GitHubIMG from '../assets/github-142-svgrepo-com.svg'
 import LinkedInIMG from '../assets/linkedin-161-svgrepo-com.svg'
-import SpotifyIMG from '../assets/spotify-162-svgrepo-com.svg'
-import XIMG from '../assets/X_logo_2023.svg'
 import AWSCertIMG from '../assets/aws-cloud-practitioner.svg'
 import HTMLImg from '../assets/html5-01-svgrepo-com.svg';
 import CSSImg from '../assets/css3-01-svgrepo-com.svg';
@@ -63,22 +60,20 @@ const About = () => {
             >
                 <div className='about-content'>
                     <h2>GET TO KNOW ME</h2>
-                    <p>
-                        I am Otonbara Alfred Okolai a web developer based in Lagos, Nigeria, I have suitable Knowledge
-                        on front-end development, and cloud computing. I aspire to be really good at my craft and also clairvoyant to
-                        bring your wildest ideas and imaginations into reality.
-                    </p>
+                    <div className="p-text">
+                        <p>
+                            I am Otonbara Alfred Okolai a web developer based in Lagos, Nigeria, I have suitable Knowledge
+                            on front-end development, and cloud computing. I aspire to be really good at my craft and also clairvoyant to
+                            bring your wildest ideas and imaginations into reality.
+                        </p>
+                    </div>
                 </div>
-                <div className="resume">
-                    <a href={CV} target='blank'>GRAB MY CV <FaDownload/></a>
-                </div>
+
                 <div className="social-links">
                     <ul>
                         <li className='social-link'><a href="https://www.linkedin.com/in/otonbaraokolai" target='blank'><img src={LinkedInIMG} alt="LinkedIn"/></a></li>
                         <li className='social-link'><a href="https://github.com/Otonbara" target='blank'><img src={GitHubIMG} alt="GitHub"/></a></li>
-                        <li className='social-link'><a href="https://twitter.com/otonbarao" target='blank'><img src={XIMG} alt="X"/></a></li>
                         <li className='social-link'><a href="https://www.credly.com/badges/8799d5ec-e18e-46b1-884f-bed76dbaa227/public_url" target='blank'><img src={AWSCertIMG} alt="AWS Certificate"/></a></li>
-                        <li className='social-link'><a href="https://open.spotify.com/user/31fxwcmwc2bgjzodpt2shpljpnkq?si=12e46c1427544f02" target='blank'><img src={SpotifyIMG} alt="Spotify"/></a></li>
                     </ul>
                 </div>
             </motion.section>
@@ -100,8 +95,7 @@ const About = () => {
                         <h3>FRONT-END DEVELOPER (VOLUNTEERING) - GREENSTAND</h3>
                         <p>Oct 2024 - Dec 2024</p>
                         <p>
-                            Participated in meetings and gave the little insight I had,
-                            also helped with the development of their treetracker website,
+                            I assisted with the development of their treetracker website,
                             by refactoring some codes.
                         </p>
                     </div>
@@ -163,16 +157,16 @@ const About = () => {
                     {[
                         { title: 'HTML', img: HTMLImg },
                         { title: 'CSS', img: CSSImg },
-                        { title: 'JAVASCRIPT', img: JSImg },
-                        { title: 'REACT', img: ReactImg },
-                        { title: 'PYTHON', img: PythonImg },
-                        { title: 'DJANGO', img: DjangoImg },
-                        { title: 'TAILWIND CSS', img: TailwindImg },
-                        { title: 'BOOTSTRAP CSS', img: BootstrapImg },
-                        { title: 'GIT', img: GitImg },
-                        { title: 'GITHUB', img: GitHubImg },
+                        { title: 'Javascript', img: JSImg },
+                        { title: 'React', img: ReactImg },
+                        { title: 'Python', img: PythonImg },
+                        { title: 'Django', img: DjangoImg },
+                        { title: 'Tailwind CSS', img: TailwindImg },
+                        { title: 'Bootstrap CSS', img: BootstrapImg },
+                        { title: 'Git', img: GitImg },
+                        { title: 'GitHub', img: GitHubImg },
                         { title: 'AWS', img: AWSImg },
-                        { title: 'FIREBASE', img: FirebaseImg }
+                        { title: 'Firebase', img: FirebaseImg }
                     ].map((tech, index) => (
                         <motion.div 
                             className="tech-stack-card"

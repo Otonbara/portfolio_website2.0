@@ -21,35 +21,19 @@ body {
     text-align: center;
 }
 
-.about-content p {
-    font-size: 20px;
-    text-align: center;
-    line-height: 2em;
-}
-
-.resume {
+.p-text {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.resume a {
-    padding: 10px 20px;
-    border: 2px solid #000;
-    background: #000;
-    border-radius: 10px;
-    cursor: grabbing;
-    font-size: 16px;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
-    font-family: 'Oswald';
-    color: #fff;
-    text-decoration: none;
-    box-shadow: 0 4px 20px #000;
-}
-
-.resume a:hover {
-    background: #fff;
-    color: #000;
+.about-content p {
+    font-size: 20px;
+    text-align: justify;
+    line-height: 2em;
+    max-width: 450px;
+    margin-top: 0%;
+    margin-bottom: 0%;
 }
 
 .social-links ul {
@@ -59,12 +43,11 @@ body {
     gap: 20px;
     list-style: none;
     padding: 0;
-    margin-top: 25px;
 }
 
 .social-link img {
     width: 32px;
-    filter: drop-shadow(4px 2px 4px #000);
+    filter: drop-shadow(2px 2px 4px #303030);
     transition: all 0.5s ease-in-out;
 }
 
@@ -74,7 +57,6 @@ body {
 
 /* EXPERIENCE */
 .experience {
-    margin-top: 20px;
     padding: 20px 50px;
 }
 
@@ -86,6 +68,8 @@ body {
 
 .experience-cards {
     display: flex;
+    justify-items: center;
+    align-items: center;
     flex-direction: column;
     gap: 20px;
 }
@@ -93,8 +77,9 @@ body {
 .experience-card {
     padding: 20px;
     border: 1px solid #8a8a8a;
+    max-width: 450px;
     border-radius: 10px;
-    box-shadow: 8px 8px 8px #d0d0d0;
+    box-shadow: 2px 2px 4px #303030;
 }
 
 .experience-card h3 {
@@ -134,24 +119,7 @@ body {
     border-radius: 10px;
     margin: 10px;
     text-align: center;
-    box-shadow: 8px 8px 8px #d0d0d0;
-    transition: all 3.5s ease-in-out;
-    background-size: 600% 100%;
-    background-position: left;
-}
-
-.service-card:hover {
-    animation: backgroundShift 3.5s forwards;
-    background-image: linear-gradient(to right, #fff, #929496, #828282);
-}
-
-@keyframes backgroundShift {
-    from {
-        background-position: left bottom;
-    }
-    to {
-        background-position: right bottom;
-    }
+    box-shadow: 2px 2px 4px #303030;
 }
 
 .service-card h3 {
@@ -197,7 +165,7 @@ body {
     border: outset #8a8a8a 2px;
     border-radius: 10px;
     margin: 10px;
-    box-shadow: 8px 8px 8px #d0d0d0;
+    box-shadow: 2px 2px 4px #303030;
 }
 
 .tech-stack-card-image {
@@ -221,8 +189,7 @@ body {
 .projects {
     margin-top: 20px;
     padding: 20px 50px;
-    /* background-color: #8a8a8a; */
-    box-shadow: 8px 8px 8px #828282;
+    box-shadow: 2px 2px 4px #303030;
 }
 
 .projects h2 {
@@ -239,9 +206,10 @@ body {
     background-color: #fff;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 8px 8px 8px #d0d0d0;
+    box-shadow: 2px 2px 4px #303030;
     transition: transform 0.5s ease;
     margin: 20px;
+    height: 450px;
 }
 
 .project-card:hover {
@@ -275,7 +243,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .project-technologies img {
@@ -286,12 +254,32 @@ body {
 .project-link {
     display: flex;
     justify-content: center;
+    gap: 1rem;
 }
 
-.project-link a {
+.project-link img {
+    width: 12px;
+}
+
+.live-link a {
     padding: 10px 20px;
     border: 2px solid #000;
-    background: #000;
+    background: #808080;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    color: #000;
+    text-decoration: none;
+    box-shadow: 2px 2px 4px #303030;
+    margin-top: 10px;
+}
+
+.github-link a {
+    padding: 10px 20px;
+    border: 2px solid #000;
+    background: #808080;
     border-radius: 10px;
     cursor: pointer;
     font-size: 12px;
@@ -299,12 +287,41 @@ body {
     transition: all 0.3s ease-in-out;
     color: #fff;
     text-decoration: none;
-    box-shadow: 4px 4px 8px #303030;
+    box-shadow: 2px 2px 4px #303030;
+    margin-top: 10px;
 }
 
 .project-link a:hover {
     background: #fff;
     color: #000;
+}
+
+.custom-left-arrow,
+.custom-right-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.custom-left-arrow {
+    left: 0;
+}
+
+.custom-right-arrow {
+    right: 0;
+}
+
+.custom-left-arrow:hover,
+.custom-right-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .contact {
@@ -345,6 +362,24 @@ body {
     text-decoration: none;
     margin: 20px;
     transition: box-shadow 0.5s ease-in-out;
+}
+
+.contact-links img {
+    width: 50px;
+}
+
+@media (max-width: 768px) {
+    .contact-links {
+        gap: 2rem;
+    }
+    
+    .contact-links a {
+        font-size: 25px;
+    }
+
+    .contact-links img {
+        width: 25px;
+    }
 }
 
 @keyframes scaleUp {

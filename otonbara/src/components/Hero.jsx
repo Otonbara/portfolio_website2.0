@@ -1,5 +1,6 @@
 import './Hero.css';
-import { FaArrowDown, FaBars, FaTimes } from 'react-icons/fa';
+import CV from '../assets/CV2.pdf'
+import { FaBars, FaTimes, FaDownload } from 'react-icons/fa';
 import { useState } from 'react';
 import HeroImg from '../assets/MAIN_SHITnobgBW.png';
 import HTMLImg from '../assets/html5-01-svgrepo-com.svg';
@@ -33,10 +34,6 @@ const Hero = () => {
         controls.start("visible");
     }
 
-    const handleScroll = () => {
-        document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
-    };
-
     const toggleNav = () => {
         setIsNavOpen(!isNavOpen);
     }
@@ -48,12 +45,17 @@ const Hero = () => {
                 <div className="hamburger" onClick={toggleNav}>
                     <FaBars/>
                 </div>
+                {isNavOpen && (
+                    <div className="close-btn" onClick={toggleNav}>
+                        <FaTimes/>
+                    </div>
+                )}
                 <ul className={`nav-links ${isNavOpen ? 'open' : ''}`}>
                     <li><a href='#' onClick={toggleNav}>HOME</a></li>
                     <li><a href='#about' onClick={toggleNav}>ABOUT</a></li>
                     <li><a href='#projects' onClick={toggleNav}>PROJECTS</a></li>
                     <li><a href='#contact' onClick={toggleNav}>CONTACT ME</a></li>
-                    <li className="close-btn" onClick={toggleNav}><FaTimes/></li>
+                    {/* <li className="close-btn" onClick={toggleNav}><FaTimes/></li> */}
                     <li className='email-btn-container'>
                         <a href="mailto:alfredokolai@gmail.com">
                             <button className='email-btn'>EMAIL ME</button>
@@ -114,11 +116,10 @@ const Hero = () => {
                     <img src={HeroImg} alt="Otonbara" className='hero-img'/>
                 </motion.div>
 
-                <div className='button'>
-                    <button className='btn filled' onClick={handleScroll}>
-                        LEARN MORE <FaArrowDown/>
-                    </button>
+                <div className="resume">
+                    <a href={CV} target='blank'>GRAB MY CV <FaDownload/></a>
                 </div>
+
             </motion.div>
         </section>
     );

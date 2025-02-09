@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import '../style.css'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
@@ -7,7 +8,6 @@ import CraftedComfort from '../assets/crafted-comfort.png'
 import SkillMatch from '../assets/Skillmatch.png'
 import TrackPro from '../assets/TrackPro.png'
 import Portfolio from '../assets/portfolio-website1.0.png'
-import ComingSoon from '../assets/coming-soon.JPG'
 import HTMLImg from '../assets/html5-01-svgrepo-com.svg';
 import CSSImg from '../assets/css3-01-svgrepo-com.svg';
 import JSImg from '../assets/javascript-155-svgrepo-com.svg';
@@ -17,6 +17,7 @@ import ReactImg from '../assets/react-svgrepo-com.svg';
 import DjangoImg from '../assets/django-svgrepo-com.svg';
 import FirebaseImg from '../assets/firebase-svgrepo-com.svg';
 import GitHubImg from '../assets/github-142-svgrepo-com.svg';
+import { FaGlobe,FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 
 const Projects = () => {
     const responsive = {
@@ -44,7 +45,8 @@ const Projects = () => {
             description: 'A website redesign for a local eye clinic in Lagos, Nigeria',
             technologies: [HTMLImg, CSSImg, JSImg, GitHubImg],
             imageUrl: Soteria,
-            liveLink: 'https://soteria-eye-clinic-website.vercel.app/'
+            liveLink: 'https://soteria-eye-clinic-website.vercel.app/',
+            githubLink: 'https://github.com/Otonbara/SoteriaEyeClinic-Website'
         },
 
         {
@@ -52,7 +54,8 @@ const Projects = () => {
             description: 'A hotel booking website for a fictional hotel',
             technologies: [ReactImg, TailwindImg],
             imageUrl: JackSuites,
-            liveLink: 'https://jack-suites.vercel.app/'
+            liveLink: 'https://jack-suites.vercel.app/',
+            githubLink: 'https://github.com/Otonbara/jack_suites'
         },
 
         {
@@ -60,7 +63,8 @@ const Projects = () => {
             description: 'An e-commerce website for a fictional furniture store',
             technologies: [HTMLImg, CSSImg, JSImg],
             imageUrl: CraftedComfort,
-            liveLink: 'https://otonbara.github.io/crafted_comfort/'
+            liveLink: 'https://otonbara.github.io/crafted_comfort/',
+            githubLink: 'https://github.com/Otonbara/crafted_comfort'
         },
 
         {
@@ -68,7 +72,8 @@ const Projects = () => {
             description: 'A platform for connecting skilled professionals with potential clients',
             technologies: [ReactImg, TailwindImg, FirebaseImg, DjangoImg],
             imageUrl: SkillMatch,
-            liveLink: 'https://skillmatch-nine.vercel.app/'
+            liveLink: 'https://skillmatch-nine.vercel.app/',
+            githubLink: 'https://github.com/Otonbara/Fullstack'
         },
 
         {
@@ -76,7 +81,8 @@ const Projects = () => {
             description: 'A platform for tracking and sending parcels',
             technologies: [HTMLImg, CSSImg, BootstrapImg],
             imageUrl: TrackPro,
-            liveLink: 'https://otonbara.github.io/logistics_web_project/'
+            liveLink: 'https://otonbara.github.io/logistics_web_project/',
+            githubLink: 'https://github.com/Otonbara/logistics_web_project'
         },
 
         {
@@ -84,17 +90,22 @@ const Projects = () => {
             description: 'My first portfolio website built with HTML, CSS and JavaScript',
             technologies: [HTMLImg, CSSImg, JSImg],
             imageUrl: Portfolio,
-            liveLink: 'https://otonbara.github.io/portfolio_website/'
+            liveLink: 'https://otonbara.github.io/portfolio_website/',
+            githubLink: 'https://github.com/Otonbara/portfolio_website'
         },
-
-        {
-            title: 'MORE PROJECTS COMING SOON....😉😜',
-            description: 'I am currently working on more projects. Check back soon for updates',
-            technologies: [],
-            imageUrl: ComingSoon,
-            liveLink: '#'
-        }
     ];
+
+    const CustomLeftArrow = ({ onClick }) => (
+        <button className="custom-left-arrow" onClick={onClick}>
+            <FaArrowLeft />
+        </button>
+    );
+
+    const CustomRightArrow = ({ onClick }) => (
+        <button className="custom-right-arrow" onClick={onClick}>
+            <FaArrowRight />
+        </button>
+    );
 
     return (
         <>
@@ -102,12 +113,11 @@ const Projects = () => {
                 <h2>STUFFS I HAVE WORKED ON</h2>
                 <Carousel 
                     responsive={responsive}
-                    autoPlay={true}
-                    autoPlaySpeed={2000}
                     infinite={true}
                     pauseOnHover={true}
                     showDots={true}
-                    arrows={false}>
+                    customLeftArrow={<CustomLeftArrow />}
+                    customRightArrow={<CustomRightArrow />}>
 
                     {projects.map((project, index) => (
                         <div className='project-card' key={index}>
@@ -120,7 +130,12 @@ const Projects = () => {
                                 ))}
                             </div>
                             <div className="project-link">
-                                <a href={project.liveLink} target="_blank" rel="noopener noreferrer">LIVE LINK</a>
+                                <div className="live-link">
+                                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer"><FaGlobe/></a>
+                                </div>
+                                <div className="github-link">
+                                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer"><img src={GitHubImg} /></a>
+                                </div>
                             </div>
                         </div>
                     ))} 

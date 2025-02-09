@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 .hero {
     font-family: 'Oswald', sans-serif;
     background-color: #fff;
@@ -52,17 +56,27 @@ body {
     display: flex;
     gap: 50px;
     padding-left: 0;
-    transition: transform 0.3s ease;
     margin-right: 20px;
 }
 
 .nav-links li {
     cursor: pointer;
-    transition: transform 0.5s ease;
+    position: relative;
 }
 
-.nav-links li:hover {
-    transform: translateY(-10px);
+.nav-links li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #000;
+    transition: width 0.3s ease;
+}
+
+.nav-links li:hover::after {
+    width: 100%;
 }
 
 .close-btn {
@@ -73,9 +87,7 @@ body {
     padding: 2px 5px;
     border: solid #000 2px;
     border-radius: 10px;
-    position: absolute;
-    top: 0px;
-    left: 20px;
+    margin-right: 20px;
 }
 
 .nav-links a {
@@ -97,7 +109,7 @@ body {
     font-family: 'Oswald';
     color: #fff;
     margin-top: -15px;
-    box-shadow: 0 4px 20px #8a8a8a;
+    box-shadow: 2px 2px 4px #303030;
 }
 
 .email-btn:hover {
@@ -138,8 +150,9 @@ body {
         margin: 20px 0;
     }
 
-    .close-btn {
+    .close-btn{
         display: block;
+        z-index: 100;
     }
 
     .email-btn-container {
@@ -244,40 +257,28 @@ body {
     filter: drop-shadow(8px 8px 4px #303030);
 }
 
-.button {
-    margin-top: 55px;
+.resume {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
 }
 
-@keyframes glow {
-    0% {
-        box-shadow: 0 0 5px #fff;
-    }
-    50% {
-        box-shadow: 0 0 20px #fff, 0 0 30px #8a8a8a, 0 0 40px #8a8a8a, 0 0 50px #8a8a8a;
-    }
-    100% {
-        box-shadow: 0 0 5px #fff;
-    }
-}
-
-.btn {
+.resume a {
     padding: 10px 20px;
     border: 2px solid #000;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    animation: glow 1.5s infinite alternate;
-    font-family: 'Oswald';
-}
-
-.filled {
     background: #000;
+    border-radius: 10px;
+    cursor: grabbing;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Oswald';
     color: #fff;
+    text-decoration: none;
+    box-shadow: 2px 2px 4px #303030;
 }
 
-.filled:hover {
+.resume a:hover {
     background: #fff;
     color: #000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
