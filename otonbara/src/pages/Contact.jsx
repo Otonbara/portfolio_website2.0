@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import '../style.css'
 import { FaEnvelope } from 'react-icons/fa'
-import GitHubIMG from '../assets/github-142-svgrepo-com.svg'
 import LinkedInIMG from '../assets/linkedin-161-svgrepo-com.svg'
 
 const Contact = () => {
@@ -17,7 +16,6 @@ const Contact = () => {
                 <div className="contact-links">
                     <a href="mailto:alfredokolai@gmail.com"><FaEnvelope/></a>
                     <a href="https://www.linkedin.com/in/otonbaraokolai" target='blank'><img src={LinkedInIMG} alt="LinkedIn"/></a>
-                    <a href="https://github.com/Otonbara" target='blank'><img src={GitHubIMG} alt="GitHub"/></a>
                 </div>
             </section>
 

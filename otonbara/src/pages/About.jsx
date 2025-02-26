@@ -15,6 +15,7 @@ import FirebaseImg from '../assets/firebase-svgrepo-com.svg';
 import GitImg from '../assets/git-svgrepo-com.svg';
 import GitHubImg from '../assets/github-142-svgrepo-com.svg';
 import AWSImg from '../assets/aws-svgrepo-com.svg';
+import BehanceIMG from '../assets/behance-svgrepo-com.svg';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -73,6 +74,7 @@ const About = () => {
                     <ul>
                         <li className='social-link'><a href="https://www.linkedin.com/in/otonbaraokolai" target='blank'><img src={LinkedInIMG} alt="LinkedIn"/></a></li>
                         <li className='social-link'><a href="https://github.com/Otonbara" target='blank'><img src={GitHubIMG} alt="GitHub"/></a></li>
+                        <li className='social-link'><a href="https://www.behance.net/otonbaraokolai" target='blank'><img src={BehanceIMG} alt="Behance"/></a></li>
                         <li className='social-link'><a href="https://www.credly.com/badges/8799d5ec-e18e-46b1-884f-bed76dbaa227/public_url" target='blank'><img src={AWSCertIMG} alt="AWS Certificate"/></a></li>
                     </ul>
                 </div>
