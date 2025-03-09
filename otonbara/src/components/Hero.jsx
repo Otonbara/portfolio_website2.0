@@ -1,14 +1,16 @@
 import './Hero.css';
-import CV from '../assets/CV2.pdf'
+import CV from '../assets/CV.pdf'
 import { FaBars, FaTimes, FaDownload } from 'react-icons/fa';
 import { useState } from 'react';
 import HeroImg from '../assets/MAIN_SHITnobgBW.png';
 import HTMLImg from '../assets/html5-01-svgrepo-com.svg';
 import CSSImg from '../assets/css3-01-svgrepo-com.svg';
 import JSImg from '../assets/javascript-155-svgrepo-com.svg';
+import TSImg from '../assets/typescript-svgrepo-com.svg';
 import TailwindImg from '../assets/tailwind-svgrepo-com.svg';
 import BootstrapImg from '../assets/bootstrap-fill-svgrepo-com.svg';
 import ReactImg from '../assets/react-svgrepo-com.svg';
+import NextImg from '../assets/nextjs-fill-svgrepo-com.svg';
 import PythonImg from '../assets/python-127-svgrepo-com.svg';
 import DjangoImg from '../assets/django-svgrepo-com.svg';
 import NodeImg from '../assets/nodejs01-svgrepo-com.svg';
@@ -85,10 +87,12 @@ const Hero = () => {
                 <Marquee className='marquee-wrapper marquee-content' id='marquee-wrapper' gradient={false} speed={50} pauseOnHover={true}>
                     <img src={HTMLImg} alt="HTML" className='marquee-img' />
                     <img src={CSSImg} alt="CSS" className='marquee-img' />
-                    <img src={JSImg} alt="JS" className='marquee-img' />
+                    <img src={JSImg} alt="JavaScript" className='marquee-img' />
+                    <img src={TSImg} alt="TypeScript" className='marquee-img' />
                     <img src={TailwindImg} alt="Tailwind" className='marquee-img' />
                     <img src={BootstrapImg} alt="Bootstrap" className='marquee-img' />
                     <img src={ReactImg} alt="React" className='marquee-img' />
+                    <img src={NextImg} alt="Next" className='marquee-img' />
                     <img src={PythonImg} alt="Python" className='marquee-img' />
                     <img src={NodeImg} alt="NodeJS" className='marquee-img' />
                     <img src={DjangoImg} alt="Django" className='marquee-img' />

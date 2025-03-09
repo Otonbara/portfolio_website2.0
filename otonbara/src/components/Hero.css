@@ -6,7 +6,7 @@ html {
 }
 
 .hero {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: #fff;
     color: #000;
     text-align: center;
@@ -16,7 +16,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: #fff;
 }
 
@@ -106,7 +106,6 @@ body {
     font-size: 16px;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
-    font-family: 'Oswald';
     color: #fff;
     margin-top: -15px;
     box-shadow: 2px 2px 4px #303030;

@@ -16,6 +16,8 @@ import GitImg from '../assets/git-svgrepo-com.svg';
 import GitHubImg from '../assets/github-142-svgrepo-com.svg';
 import AWSImg from '../assets/aws-svgrepo-com.svg';
 import BehanceIMG from '../assets/behance-svgrepo-com.svg';
+import TSImg from '../assets/typescript-svgrepo-com.svg'
+import NextImg from '../assets/nextjs-fill-svgrepo-com.svg'
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -159,8 +161,10 @@ const About = () => {
                     {[
                         { title: 'HTML', img: HTMLImg },
                         { title: 'CSS', img: CSSImg },
-                        { title: 'Javascript', img: JSImg },
+                        { title: 'JavaScript', img: JSImg },
+                        { title: 'TypeScript', img: TSImg},
                         { title: 'React', img: ReactImg },
+                        { title: 'Next', img: NextImg},
                         { title: 'Python', img: PythonImg },
                         { title: 'Django', img: DjangoImg },
                         { title: 'Tailwind CSS', img: TailwindImg },

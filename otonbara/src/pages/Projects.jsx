@@ -2,6 +2,7 @@
 import '../style.css'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
+import RG from '../assets/rugged-gentleman.png'
 import Soteria from '../assets/soteria-eye-clinic.png'
 import JackSuites from '../assets/jack-suites.png'
 import CraftedComfort from '../assets/crafted-comfort.png'
@@ -11,9 +12,11 @@ import Portfolio from '../assets/portfolio-website1.0.png'
 import HTMLImg from '../assets/html5-01-svgrepo-com.svg';
 import CSSImg from '../assets/css3-01-svgrepo-com.svg';
 import JSImg from '../assets/javascript-155-svgrepo-com.svg';
+import TSImg from '../assets/typescript-svgrepo-com.svg';
 import TailwindImg from '../assets/tailwind-svgrepo-com.svg';
 import BootstrapImg from '../assets/bootstrap-fill-svgrepo-com.svg';
 import ReactImg from '../assets/react-svgrepo-com.svg';
+import NextImg from '../assets/nextjs-fill-svgrepo-com.svg';
 import DjangoImg from '../assets/django-svgrepo-com.svg';
 import FirebaseImg from '../assets/firebase-svgrepo-com.svg';
 import GitHubImg from '../assets/github-142-svgrepo-com.svg';
@@ -41,12 +44,12 @@ const Projects = () => {
 
     const projects = [
         {
-            title: 'SOTERIA EYE CLINIC WEBSITE REDESIGN',
-            description: 'A website redesign for a local eye clinic in Lagos, Nigeria',
-            technologies: [HTMLImg, CSSImg, JSImg, GitHubImg],
-            imageUrl: Soteria,
-            liveLink: 'https://soteria-eye-clinic-website.vercel.app/',
-            githubLink: 'https://github.com/Otonbara/SoteriaEyeClinic-Website'
+            title: 'RUGGED GENTLEMAN',
+            description: 'A fashion e-commerce website for a fictional clothing brand',
+            technologies: [NextImg, TSImg, TailwindImg],
+            imageUrl: RG,
+            liveLink: 'https://rugged-gentleman.vercel.app/',
+            githubLink: 'https://github.com/Otonbara/Rugged_Gentleman'
         },
 
         {
@@ -65,6 +68,15 @@ const Projects = () => {
             imageUrl: CraftedComfort,
             liveLink: 'https://otonbara.github.io/crafted_comfort/',
             githubLink: 'https://github.com/Otonbara/crafted_comfort'
+        },
+
+        {
+            title: 'SOTERIA EYE CLINIC WEBSITE REDESIGN',
+            description: 'A website redesign for a local eye clinic in Lagos, Nigeria',
+            technologies: [HTMLImg, CSSImg, JSImg, GitHubImg],
+            imageUrl: Soteria,
+            liveLink: 'https://soteria-eye-clinic-website.vercel.app/',
+            githubLink: 'https://github.com/Otonbara/SoteriaEyeClinic-Website'
         },
 
         {
