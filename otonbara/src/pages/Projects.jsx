@@ -2,6 +2,7 @@
 import '../style.css'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
+import CarBuddy from '../assets/carbuddy.png'
 import RG from '../assets/rugged-gentleman.png'
 import Soteria from '../assets/soteria-eye-clinic.png'
 import JackSuites from '../assets/jack-suites.png'
@@ -44,8 +45,16 @@ const Projects = () => {
 
     const projects = [
         {
+            title: 'CARBUDDY',
+            description: 'A user-friendly car rental platform designed to simplify vehicle bookings for users',
+            technologies: [ReactImg, TSImg, TailwindImg],
+            imageUrl: CarBuddy,
+            liveLink: 'https://carbuddy-rose.vercel.app/',
+            githubLink: 'https://github.com/Otonbara/CarBuddy'
+        },
+        {
             title: 'RUGGED GENTLEMAN',
-            description: 'A fashion e-commerce website for a fictional clothing brand',
+            description: 'A fashion e-commerce website for a fictional male clothing store',
             technologies: [NextImg, TSImg, TailwindImg],
             imageUrl: RG,
             liveLink: 'https://rugged-gentleman.vercel.app/',
