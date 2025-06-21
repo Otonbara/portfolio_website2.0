@@ -1,5 +1,5 @@
 import './Hero.css';
-import CV from '../assets/CV.pdf'
+import CV from '../assets/TECH RESUME.pdf'
 import { FaBars, FaTimes, FaDownload } from 'react-icons/fa';
 import { useState } from 'react';
 import HeroImg from '../assets/MAIN_SHITnobgBW.png';
