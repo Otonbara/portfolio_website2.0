@@ -2,6 +2,7 @@
 import '../style.css'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
+import Flux from '../assets/Flux.png'
 import CarBuddy from '../assets/carbuddy.png'
 import RG from '../assets/rugged-gentleman.png'
 import Soteria from '../assets/soteria-eye-clinic.png'
@@ -9,7 +10,6 @@ import JackSuites from '../assets/jack-suites.png'
 import CraftedComfort from '../assets/crafted-comfort.png'
 import SkillMatch from '../assets/Skillmatch.png'
 import TrackPro from '../assets/TrackPro.png'
-import Portfolio from '../assets/portfolio-website1.0.png'
 import HTMLImg from '../assets/html5-01-svgrepo-com.svg';
 import CSSImg from '../assets/css3-01-svgrepo-com.svg';
 import JSImg from '../assets/javascript-155-svgrepo-com.svg';
@@ -44,6 +44,14 @@ const Projects = () => {
     };
 
     const projects = [
+        {
+            title: 'FLUX CREATIVE TECHNOLOGIES',
+            description: 'A responsive, modern website interface for this digital product and tech design studio.',
+            technologies: [ReactImg, JSImg, TailwindImg],
+            imageUrl: Flux,
+            liveLink: 'https://fluxcreativetech.com/',
+            githubLink: ''
+        },
         {
             title: 'CARBUDDY',
             description: 'A user-friendly car rental platform designed to simplify vehicle bookings for users',
@@ -104,15 +112,6 @@ const Projects = () => {
             imageUrl: TrackPro,
             liveLink: 'https://otonbara.github.io/logistics_web_project/',
             githubLink: 'https://github.com/Otonbara/logistics_web_project'
-        },
-
-        {
-            title: 'MY FIRST PORTFOLIO WEBSITE',
-            description: 'My first portfolio website built with HTML, CSS and JavaScript',
-            technologies: [HTMLImg, CSSImg, JSImg],
-            imageUrl: Portfolio,
-            liveLink: 'https://otonbara.github.io/portfolio_website/',
-            githubLink: 'https://github.com/Otonbara/portfolio_website'
         },
     ];
 
