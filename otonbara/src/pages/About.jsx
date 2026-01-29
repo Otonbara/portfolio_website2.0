@@ -96,11 +96,22 @@ const About = () => {
                 <h2>WORK EXPERIENCE</h2>
                 <div className="experience-cards">
                     <div className="experience-card">
-                        <h3>FRONT-END DEVELOPER (VOLUNTEERING) - GREENSTAND</h3>
-                        <p>Oct 2024 - Dec 2024</p>
+                        <h3>FRONTEND DEVELOPER - FLUX CREATIVE TECHNOLOGIES</h3>
+                        <p>Jun 2025 - Present</p>
                         <p>
-                            I assisted with the development of their treetracker website,
-                            by refactoring some codes.
+                           Architected the frontend for a digital product and software studio website.
+                        </p>
+                        <p>
+                           Translated complex Figma designs into performant, production-ready web interfaces with a focus on 
+                            pixel-perfect accuracy.
+                        </p>
+                        <p>
+                           Developed a library of reusable UI components and smooth interactions, significantly reducing 
+                            development time for future updates.
+                        </p>
+                        <p>
+                           Implemented responsive layouts and optimized asset loading to ensure a high-speed, polished user 
+                            experience.
                         </p>
                     </div>
                 </div>
